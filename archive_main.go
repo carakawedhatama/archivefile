@@ -32,7 +32,7 @@ func main() {
 	zipWriter := zip.NewWriter(zipFile)
 	defer zipWriter.Close()
 
-	//compress + kasih password
+	//compress + add password
 	w, errZip := zipWriter.Encrypt(TargetedFile, FilePassword)
 	if errZip != nil {
 		log.Panic(errZip.Error())
